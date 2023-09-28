@@ -1,0 +1,728 @@
+2023-09-20 15:22:00 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 15:22:00 [INFO] Question: None
+2023-09-20 15:22:00 [INFO] Running PandasAI with openai LLM...
+2023-09-20 15:22:00 [INFO] Prompt ID: 116a7611-95df-486f-adbd-09533ad52c3c
+2023-09-20 15:22:00 [INFO] Using cached response
+2023-09-20 15:22:00 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare
+    df = dfs[0]
+    
+    # Process
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['year'] = df['Date'].dt.year
+    df['month'] = df['Date'].dt.month_name()
+    df['day_of_week'] = df['Date'].dt.day_name()
+    
+    # Analyze
+    total_volume_by_year = df.groupby('year')['Total Volume'].sum()
+    average_price_by_month = df.groupby('month')['AveragePrice'].mean()
+    total_bags_by_day_of_week = df.groupby('day_of_week')['Total Bags'].sum()
+    
+    # Output
+    output = {
+        "type": "dataframe",
+        "value": {
+            "total_volume_by_year": total_volume_by_year,
+            "average_price_by_month": average_price_by_month,
+            "total_bags_by_day_of_week": total_bags_by_day_of_week
+        }
+    }
+    
+    return output
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-20 15:22:00 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0]
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['year'] = df['Date'].dt.year
+    df['month'] = df['Date'].dt.month_name()
+    df['day_of_week'] = df['Date'].dt.day_name()
+    total_volume_by_year = df.groupby('year')['Total Volume'].sum()
+    average_price_by_month = df.groupby('month')['AveragePrice'].mean()
+    total_bags_by_day_of_week = df.groupby('day_of_week')['Total Bags'].sum()
+    output = {'type': 'dataframe', 'value': {'total_volume_by_year': total_volume_by_year, 'average_price_by_month': average_price_by_month, 'total_bags_by_day_of_week': total_bags_by_day_of_week}}
+    return output
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-20 15:22:00 [INFO] Answer: {'type': 'dataframe', 'value': {'total_volume_by_year': year
+2015    4.385469e+09
+2016    4.820890e+09
+2017    4.934306e+09
+2018    1.382738e+09
+Name: Total Volume, dtype: float64, 'average_price_by_month': month
+April        1.374380
+August       1.512514
+December     1.331112
+February     1.274387
+January      1.311019
+July         1.462077
+June         1.408964
+March        1.332255
+May          1.346601
+November     1.455563
+October      1.579683
+September    1.572654
+Name: AveragePrice, dtype: float64, 'total_bags_by_day_of_week': day_of_week
+Sunday    4.373176e+09
+Name: Total Bags, dtype: float64}}
+2023-09-20 15:22:00 [INFO] Executed in: 0.05946183204650879s
+2023-09-20 15:22:00 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 15:27:58 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 15:27:58 [INFO] Question: None
+2023-09-20 15:27:58 [INFO] Running PandasAI with openai LLM...
+2023-09-20 15:27:58 [INFO] Prompt ID: 4e8e1cb0-3d0b-411f-9da9-6ef1863f3008
+2023-09-20 15:27:58 [INFO] Using cached response
+2023-09-20 15:27:58 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare
+    df = dfs[0]
+    
+    # Process
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['year'] = df['Date'].dt.year
+    df['month'] = df['Date'].dt.month_name()
+    df['day_of_week'] = df['Date'].dt.day_name()
+    
+    # Analyze
+    total_volume_by_year = df.groupby('year')['Total Volume'].sum()
+    average_price_by_month = df.groupby('month')['AveragePrice'].mean()
+    total_bags_by_day_of_week = df.groupby('day_of_week')['Total Bags'].sum()
+    
+    # Output
+    output = {
+        "type": "dataframe",
+        "value": {
+            "total_volume_by_year": total_volume_by_year,
+            "average_price_by_month": average_price_by_month,
+            "total_bags_by_day_of_week": total_bags_by_day_of_week
+        }
+    }
+    
+    return output
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-20 15:27:58 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0]
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['year'] = df['Date'].dt.year
+    df['month'] = df['Date'].dt.month_name()
+    df['day_of_week'] = df['Date'].dt.day_name()
+    total_volume_by_year = df.groupby('year')['Total Volume'].sum()
+    average_price_by_month = df.groupby('month')['AveragePrice'].mean()
+    total_bags_by_day_of_week = df.groupby('day_of_week')['Total Bags'].sum()
+    output = {'type': 'dataframe', 'value': {'total_volume_by_year': total_volume_by_year, 'average_price_by_month': average_price_by_month, 'total_bags_by_day_of_week': total_bags_by_day_of_week}}
+    return output
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-20 15:27:58 [INFO] Answer: {'type': 'dataframe', 'value': {'total_volume_by_year': year
+2015    4.385469e+09
+2016    4.820890e+09
+2017    4.934306e+09
+2018    1.382738e+09
+Name: Total Volume, dtype: float64, 'average_price_by_month': month
+April        1.374380
+August       1.512514
+December     1.331112
+February     1.274387
+January      1.311019
+July         1.462077
+June         1.408964
+March        1.332255
+May          1.346601
+November     1.455563
+October      1.579683
+September    1.572654
+Name: AveragePrice, dtype: float64, 'total_bags_by_day_of_week': day_of_week
+Sunday    4.373176e+09
+Name: Total Bags, dtype: float64}}
+2023-09-20 15:27:58 [INFO] Executed in: 0.03500819206237793s
+2023-09-20 15:27:58 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 15:51:25 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 15:51:26 [INFO] Question: None
+2023-09-20 15:51:26 [INFO] Running PandasAI with openai LLM...
+2023-09-20 15:51:26 [INFO] Prompt ID: cd3c01d8-72c0-4381-84b1-9a8c98b6cb25
+2023-09-20 15:51:26 [INFO] Using cached response
+2023-09-20 15:51:26 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare
+    df = dfs[0]
+    
+    # Process
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['year'] = df['Date'].dt.year
+    df['month'] = df['Date'].dt.month_name()
+    df['day_of_week'] = df['Date'].dt.day_name()
+    
+    # Analyze
+    total_volume_by_year = df.groupby('year')['Total Volume'].sum()
+    average_price_by_month = df.groupby('month')['AveragePrice'].mean()
+    total_bags_by_day_of_week = df.groupby('day_of_week')['Total Bags'].sum()
+    
+    # Output
+    output = {
+        "type": "dataframe",
+        "value": {
+            "total_volume_by_year": total_volume_by_year,
+            "average_price_by_month": average_price_by_month,
+            "total_bags_by_day_of_week": total_bags_by_day_of_week
+        }
+    }
+    
+    return output
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-20 15:51:26 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0]
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['year'] = df['Date'].dt.year
+    df['month'] = df['Date'].dt.month_name()
+    df['day_of_week'] = df['Date'].dt.day_name()
+    total_volume_by_year = df.groupby('year')['Total Volume'].sum()
+    average_price_by_month = df.groupby('month')['AveragePrice'].mean()
+    total_bags_by_day_of_week = df.groupby('day_of_week')['Total Bags'].sum()
+    output = {'type': 'dataframe', 'value': {'total_volume_by_year': total_volume_by_year, 'average_price_by_month': average_price_by_month, 'total_bags_by_day_of_week': total_bags_by_day_of_week}}
+    return output
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-20 15:51:26 [INFO] Answer: {'type': 'dataframe', 'value': {'total_volume_by_year': year
+2015    4.385469e+09
+2016    4.820890e+09
+2017    4.934306e+09
+2018    1.382738e+09
+Name: Total Volume, dtype: float64, 'average_price_by_month': month
+April        1.374380
+August       1.512514
+December     1.331112
+February     1.274387
+January      1.311019
+July         1.462077
+June         1.408964
+March        1.332255
+May          1.346601
+November     1.455563
+October      1.579683
+September    1.572654
+Name: AveragePrice, dtype: float64, 'total_bags_by_day_of_week': day_of_week
+Sunday    4.373176e+09
+Name: Total Bags, dtype: float64}}
+2023-09-20 15:51:26 [INFO] Executed in: 0.042835235595703125s
+2023-09-20 15:51:26 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 16:18:41 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-20 16:18:41 [INFO] Question: None
+2023-09-20 16:18:41 [INFO] Running PandasAI with openai LLM...
+2023-09-20 16:18:41 [INFO] Prompt ID: 06f7957d-4171-4610-b983-a5f462337603
+2023-09-20 16:18:41 [INFO] Using cached response
+2023-09-20 16:18:41 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare: No preprocessing or cleaning needed
+    
+    # Process: Group by region and calculate the average price
+    avg_price_by_region = dfs[0].groupby('region')['AveragePrice'].mean()
+    
+    # Analyze: Find the region with the highest average price
+    max_avg_price_region = avg_price_by_region.idxmax()
+    
+    # Output: Return the region with the highest average price
+    return {"type": "text", "value": f"The region with the highest average price is {max_avg_price_region}."}
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-20 16:18:41 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    avg_price_by_region = dfs[0].groupby('region')['AveragePrice'].mean()
+    max_avg_price_region = avg_price_by_region.idxmax()
+    return {'type': 'text', 'value': f'The region with the highest average price is {max_avg_price_region}.'}
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-20 16:18:41 [INFO] Answer: {'type': 'text', 'value': 'The region with the highest average price is HartfordSpringfield.'}
+2023-09-20 16:18:41 [INFO] Executed in: 0.012766838073730469s
+2023-09-21 10:22:21 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:22:21 [INFO] Question: None
+2023-09-21 10:22:21 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:22:21 [INFO] Prompt ID: e854314a-ea35-46c8-94ec-a777ab7ba707
+2023-09-21 10:24:05 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:24:05 [INFO] Question: None
+2023-09-21 10:24:05 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:24:05 [INFO] Prompt ID: 149abca8-e8a3-4306-8af5-006b4fd9bc42
+2023-09-21 10:29:29 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:29:29 [INFO] Question: None
+2023-09-21 10:29:29 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:29:29 [INFO] Prompt ID: 79b6d63f-79e4-481a-964a-73afb68a936c
+2023-09-21 10:29:48 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    
+    # Prepare: Preprocessing and cleaning data if necessary
+    df = dfs[0].copy()
+    
+    # Process: Manipulating data for analysis
+    # Group by Province and calculate the average age
+    avg_age_by_province = df.groupby('Province')['Age_survey'].mean().reset_index()
+    
+    # Filter the data for females only
+    female_df = df[df['Female'] == 1]
+    
+    # Analyze: Conducting the actual analysis
+    # Calculate the percentage of females in the dataset
+    female_percentage = len(female_df) / len(df) * 100
+    
+    # Output: return a dictionary
+    result = {
+        "type": "text",
+        "value": f"The average age by province is:\n{avg_age_by_province}\n\nThe percentage of females in the dataset is: {female_percentage:.2f}%"
+    }
+    
+    return result
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-21 10:29:48 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0].copy()
+    avg_age_by_province = df.groupby('Province')['Age_survey'].mean().reset_index()
+    female_df = df[df['Female'] == 1]
+    female_percentage = len(female_df) / len(df) * 100
+    result = {'type': 'text', 'value': f"""The average age by province is:
+{avg_age_by_province}
+
+The percentage of females in the dataset is: {female_percentage:.2f}%"""}
+    return result
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-21 10:29:48 [INFO] Answer: {'type': 'text', 'value': 'The average age by province is:\n        Province  Age_survey\n0   Eastern Cape   24.565350\n1     Free State   25.687500\n2        Gauteng   24.921368\n3  KwaZulu-Natal   25.117991\n4        Limpopo   25.510689\n5     Mpumalanga   24.889807\n6     North West   24.636015\n7  Northern Cape   24.541176\n8   Western Cape   24.258065\n\nThe percentage of females in the dataset is: 56.44%'}
+2023-09-21 10:29:48 [INFO] Executed in: 19.178504943847656s
+2023-09-21 10:29:57 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:29:57 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:29:57 [INFO] Question: None
+2023-09-21 10:29:57 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:29:57 [INFO] Prompt ID: be6c7a06-3b59-4931-ba88-f211f2b174e9
+2023-09-21 10:30:52 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:30:52 [INFO] Question: None
+2023-09-21 10:30:52 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:30:52 [INFO] Prompt ID: 3bfbca8e-8552-4519-9583-acb38c6b0b40
+2023-09-21 10:31:49 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:31:49 [INFO] Question: None
+2023-09-21 10:31:49 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:31:49 [INFO] Prompt ID: 8b86fdb2-b7a8-4e4f-86fd-68fdff46c784
+2023-09-21 10:33:04 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 10:33:04 [INFO] Question: None
+2023-09-21 10:33:04 [INFO] Running PandasAI with openai LLM...
+2023-09-21 10:33:04 [INFO] Prompt ID: 6185983c-d973-4c78-b1da-74f2cd5ec702
+2023-09-21 11:27:21 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:27:21 [INFO] Question: None
+2023-09-21 11:27:21 [INFO] Running PandasAI with openai LLM...
+2023-09-21 11:27:21 [INFO] Prompt ID: 43649088-106b-461c-a205-0a0fc306056c
+2023-09-21 11:27:42 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare: Preprocessing and cleaning data if necessary
+    df = dfs[0].copy()
+    
+    # Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    df['Age_group'] = pd.cut(df['Age_survey'], bins=[0, 18, 30, 40, 50, 60, float('inf')], labels=['0-18', '19-30', '31-40', '41-50', '51-60', '61+'])
+    age_group_counts = df['Age_group'].value_counts().sort_index()
+    
+    # Analyze: Conducting the actual analysis
+    result = {
+        "type": "dataframe",
+        "value": age_group_counts
+    }
+    
+    return result
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-21 11:27:42 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0].copy()
+    df['Age_group'] = pd.cut(df['Age_survey'], bins=[0, 18, 30, 40, 50, 60, float('inf')], labels=['0-18', '19-30', '31-40', '41-50', '51-60', '61+'])
+    age_group_counts = df['Age_group'].value_counts().sort_index()
+    result = {'type': 'dataframe', 'value': age_group_counts}
+    return result
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-21 11:27:42 [INFO] Answer: {'type': 'dataframe', 'value': 0-18       21
+19-30    3474
+31-40     506
+41-50      19
+51-60       0
+61+         0
+Name: Age_group, dtype: int64}
+2023-09-21 11:27:42 [INFO] Executed in: 20.35785698890686s
+2023-09-21 11:27:42 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:27:57 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 678, in get_or_create_cached_value
+    return_value = _read_from_cache(
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 435, in _read_from_cache
+    raise e
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 420, in _read_from_cache
+    return _read_from_mem_cache(
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 337, in _read_from_mem_cache
+    raise CacheKeyNotFoundError("Key not found in mem cache")
+streamlit.runtime.legacy_caching.caching.CacheKeyNotFoundError: Key not found in mem cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:27:57 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 678, in get_or_create_cached_value
+    return_value = _read_from_cache(
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 435, in _read_from_cache
+    raise e
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 420, in _read_from_cache
+    return _read_from_mem_cache(
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 337, in _read_from_mem_cache
+    raise CacheKeyNotFoundError("Key not found in mem cache")
+streamlit.runtime.legacy_caching.caching.CacheKeyNotFoundError: Key not found in mem cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:27:57 [INFO] Question: None
+2023-09-21 11:27:57 [INFO] Running PandasAI with openai LLM...
+2023-09-21 11:27:57 [INFO] Prompt ID: edf56a8c-776f-4db8-bd2f-d1a6c341066b
+2023-09-21 11:28:19 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare: Preprocessing and cleaning data if necessary
+    df = dfs[0].copy()
+    
+    # Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    df['Age_group'] = pd.cut(df['Age_survey'], bins=[0, 18, 25, 35, 50, float('inf')], labels=['<18', '18-25', '26-35', '36-50', '50+'])
+    df['Employment_status'] = df['Status'].replace({'wage employed': 'Employed', 'employment programme': 'Employment Programme', 'self employed': 'Self Employed', 'studying': 'Studying', 'other': 'Other'})
+    
+    # Analyze: Conducting the actual analysis
+    employment_counts = df['Employment_status'].value_counts()
+    
+    # Output: return a dictionary
+    result = {
+        "type": "dataframe",
+        "value": employment_counts
+    }
+    
+    return result
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-21 11:28:19 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0].copy()
+    df['Age_group'] = pd.cut(df['Age_survey'], bins=[0, 18, 25, 35, 50, float('inf')], labels=['<18', '18-25', '26-35', '36-50', '50+'])
+    df['Employment_status'] = df['Status'].replace({'wage employed': 'Employed', 'employment programme': 'Employment Programme', 'self employed': 'Self Employed', 'studying': 'Studying', 'other': 'Other'})
+    employment_counts = df['Employment_status'].value_counts()
+    result = {'type': 'dataframe', 'value': employment_counts}
+    return result
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-21 11:28:20 [INFO] Answer: {'type': 'dataframe', 'value': unemployed                1775
+Studying                   966
+Employed                   763
+Other                      278
+Self Employed              200
+Employment Programme        31
+wage and self employed       7
+Name: Employment_status, dtype: int64}
+2023-09-21 11:28:20 [INFO] Executed in: 22.673197984695435s
+2023-09-21 11:28:20 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 678, in get_or_create_cached_value
+    return_value = _read_from_cache(
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 435, in _read_from_cache
+    raise e
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 420, in _read_from_cache
+    return _read_from_mem_cache(
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/streamlit/runtime/legacy_caching/caching.py", line 337, in _read_from_mem_cache
+    raise CacheKeyNotFoundError("Key not found in mem cache")
+streamlit.runtime.legacy_caching.caching.CacheKeyNotFoundError: Key not found in mem cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:31:30 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:31:30 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:31:30 [INFO] Question: None
+2023-09-21 11:31:30 [INFO] Running PandasAI with openai LLM...
+2023-09-21 11:31:30 [INFO] Prompt ID: ccc712b6-473d-446e-984f-cfbb4afdca3d
+2023-09-21 11:45:56 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/Users/damacm172_/anaconda3/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/damacm172_/Downloads/statsmart/pandasai.json'
+2023-09-21 11:45:56 [INFO] Question: None
+2023-09-21 11:45:56 [INFO] Running PandasAI with openai LLM...
+2023-09-21 11:45:56 [INFO] Prompt ID: 72c40bd8-546d-421d-8df7-3bd36c44a308
+2023-09-21 11:46:15 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in /temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # Prepare: No preprocessing or cleaning necessary
+    
+    # Process: Filter the dataframe to include only the rows where the Status is "unemployed"
+    unemployed_df = dfs[0][dfs[0]['Status'] == 'unemployed']
+    
+    # Analyze: Calculate the average age of unemployed individuals
+    average_age = unemployed_df['Age_survey'].mean()
+    
+    # Output: Return the average age as a text value
+    return {"type": "text", "value": f"The average age of unemployed individuals is {average_age:.2f}."}
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-21 11:46:15 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    unemployed_df = dfs[0][dfs[0]['Status'] == 'unemployed']
+    average_age = unemployed_df['Age_survey'].mean()
+    return {'type': 'text', 'value': f'The average age of unemployed individuals is {average_age:.2f}.'}
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-21 11:46:15 [INFO] Answer: {'type': 'text', 'value': 'The average age of unemployed individuals is 25.18.'}
+2023-09-21 11:46:15 [INFO] Executed in: 18.921250104904175s
